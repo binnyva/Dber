@@ -1,0 +1,5 @@
+Student
+	id
+	name
+	rollno
+	added_on

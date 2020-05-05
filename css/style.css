@@ -1,0 +1,71 @@
+#content {
+	margin-top: 60px;
+}
+.complete {
+	background-color: green;
+}
+.incomplete {
+	background-color: red;
+}
+.progress div {
+	float:left;
+}
+
+label.btn.active {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#nav-links a {
+  font-weight: bold;
+  color: #fff;
+}
+
+.form-control-feedback {
+	margin-top: 0 !important;
+}
+
+.alert-warning{
+	background: #FFF9C4  !important;
+	color: #555 !important;
+	padding: 10px;
+	font-size: 13px;
+}
+
+.alert-success{
+	background: #DCEDC8  !important;
+	color: #555 !important;
+	padding: 10px;
+	font-size: 13px;
+}
+
+
+a.badge-info{
+  background: #1E88E5;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+a.badge-primary{
+  background: #039BE5;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+body {
+    height: 100%;
+    margin: 10px;
+    font-family: Tahoma, Arial, Verdana;
+    font-weight: normal;
+    font-size: 12px;
+    color: #333333;
+}
+

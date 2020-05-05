@@ -1,0 +1,22 @@
+.user-filter-block {
+	height: 400px;
+	overflow-y: auto;
+}
+
+.filtered, .filtered-by-type, .filtered-by-vertical {
+	display: none;
+	/*color:red;*/
+}
+
+.progress {
+	display: none;
+}
+
+/*
+.prev {
+	background: url('../images/silk_icons/resultset_previous.png') no-repeat;
+}
+.next {
+	background: url('../images/silk_icons/resultset_next.png') no-repeat;
+}
+*/
