@@ -262,7 +262,7 @@ class Create${table}Table extends Migration
      */
     public function up()
     {
-        Schema::create('${table}', function (Blueprint $table) {");
+        Schema::create('${table}', function (Blueprint \$table) {");
 			
 			$final_statements = array();
 			$field_creations = array();
@@ -278,7 +278,10 @@ class Create${table}Table extends Migration
 				if($f['type'] == 'VARCHAR') {
 					$line = "\$table->string('${f['name']}'$length)";
 				} elseif($f['type'] == 'INT') {
-					$line = "\$table->integer('${f['name']}'$length)";
+					$line = "\$table->integer('${f['name']}')";
+					if(i($f,'special') == 'unsigned') {
+						$line = "\$table->bigInteger('${f['name']}')->unsigned()";
+					}
 				} elseif($f['type'] == 'DATE') {
 					$line = "\$table->date('${f['name']}')";
 				} elseif($f['type'] == 'DATETIME') {
@@ -293,10 +296,11 @@ class Create${table}Table extends Migration
 				if(i($f, 'default')) $line .= "->default('${f['default']}')";
 				
 				if(i($f,'null_mode') != 'NOT NULL') $line .= "->nullable()";
-				if(i($f,'special') == 'unsigned') $line .= "->unsigned()";
 				if(i($f,'comment')) $line .= "->default('${f['comment']}')";
 							
-				if(i($f,'primary_key')) $line .= "->primary('${f['name']}')";
+				if(i($f,'primary_key')) {
+					$line = "\$table->increments('${f['name']}')";
+				}
 				elseif(i($f,'index')) $line .= "->index('${f['name']}')";
 				
 				code("            " . $line . ";");
